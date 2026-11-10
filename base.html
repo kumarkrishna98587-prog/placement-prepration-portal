@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title or 'Placement Prep Portal' }}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><nav><a class="brand" href="/">CareerLaunch</a><div>
+{% if session.get('user_id') %}<a href="/dashboard">Dashboard</a><a href="/quiz">Aptitude Test</a><a href="/interview">Interview</a><a href="/resume">Resume Builder</a><a href="/logout">Logout</a>
+{% else %}<a href="/login">Login</a><a href="/register">Register</a>{% endif %}</div></nav>
+<main>{% with messages = get_flashed_messages() %}{% if messages %}<div class="notice">{% for m in messages %}{{m}}{% endfor %}</div>{% endif %}{% endwith %}{% block content %}{% endblock %}</main>
+<footer>CareerLaunch · Student Placement Preparation Portal</footer></body></html>

@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<h1>Interview Preparation</h1><p class="muted">Practice answering these questions aloud or in writing.</p>{% for q in questions %}<article class="question"><h3>{{loop.index}}. {{q}}</h3><p class="muted">Tip: Give a clear, honest answer with a short example.</p></article>{% endfor %}{% endblock %}
